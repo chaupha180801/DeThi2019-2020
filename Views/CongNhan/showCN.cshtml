@@ -1,0 +1,30 @@
+﻿@model DETHI20.Models.CongNhanModel
+@{
+    ViewData["Title"] = "showCN";
+}
+
+<br>
+<label for="maTB">Mã công nhân: </label>
+<input type="text" id="macn" name="tencn" value="@Model.MaCongNhan" />
+<br>
+<label for="maCH">Tên công nhân: </label>
+<input type="text" id="tencn" name="tecn" value="@Model.TenCongNhan" />
+<br>
+<label for="lanThu">Giới tính: </label>
+@if (Model.GioiTinh == 1)
+{
+    <input type="checkbox" id="gioitinh" name="gioitinh" value="@Model.GioiTinh" checked />
+}
+else
+{
+    <input type="checkbox" id="gioitinh" name="gioitinh" value="@Model.GioiTinh"  />
+}
+
+<br>
+<label for="ngBT">Năm sinh: </label>
+<input type="text" id="namsinh" name="namsinh" value="@Model.NamSinh" />
+<br>
+<label for="ngBT">Nước về: </label>
+<input type="text" id="nuocve" name="nuocve" value="@Model.NuocVe" />
+
+

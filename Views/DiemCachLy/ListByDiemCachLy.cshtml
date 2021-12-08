@@ -1,0 +1,14 @@
+﻿@model List<DETHI20.Models.DiemCachLyModel>
+
+<form action="/CongNhan/ListCongNhanByDCL" method="post">
+    <label>Tên điểm cách ly </label>
+    <select name="MaDiemCachLy" id="MaDiemCachLy">
+        @foreach (var item in Model)
+        {
+            <option value="@item.MaDiemCachLy">@item.TenDiemCachLy</option>
+        }
+    </select>
+    <br />
+    <input type="submit" name="submit" value="Liệt kê" id="liet ke" />
+</form>
+

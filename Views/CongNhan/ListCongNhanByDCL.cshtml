@@ -1,0 +1,25 @@
+﻿@model List<object>
+
+<table border="1">
+    <tr>
+        <th>Mã công nhân</th>
+        <th>Tên công nhân</th>
+        <th>Chức năng</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.GetType().GetProperty("MaCN").GetValue(item, null)
+            </td>
+            <td>
+                @item.GetType().GetProperty("TenCN").GetValue(item, null)
+            </td>
+            <td>
+                <a href="/CongNhan/Delete?macn=@item.GetType().GetProperty("MaCN").GetValue(item, null)">Delete</a>
+                <a href="/CongNhan/showCN?macn=@item.GetType().GetProperty("MaCN").GetValue(item, null)">View</a>
+            </td>
+        </tr>
+    }
+</table>
